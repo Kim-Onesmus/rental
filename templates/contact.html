@@ -1,0 +1,354 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <!-- <link rel="stylesheet" href="contact.css"> -->
+</head>
+<style>
+  *{
+    box-sizing: border-box;
+}
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo img{
+    width: 200px;
+}
+.links{
+    display: flex;
+    list-style: none;
+}
+.links a{
+   
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.buttons button{
+    background-color: blueviolet;
+    cursor: pointer;
+    border:none;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    width: 100px;
+
+}
+
+/* style inputs */
+input[type=text],select
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+input[type=submit]:hover{
+    background-color: white;
+}
+/* style the container /contact section*/
+.container{
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+}
+/* create two columns that float next to each other */
+.column{
+    float: left;
+    width: 50%;
+    margin-top: 10px;
+    padding: 25px;
+}
+.row::after{
+content: "";
+display: table;
+clear: both;
+}
+@media screen and (max-width: 600px){
+    .column, input[type=submit]{
+        width: 100%;
+        margin-top: 0;
+    }
+    
+}
+
+
+/* Bootstrap */
+/*search box css start here*/
+.search-sec{
+    padding: 2rem;
+}
+.search-slt{
+    display: block;
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    height: calc(3rem + 2px) !important;
+    border-radius:0;
+}
+.wrn-btn{
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+    height: calc(3rem + 2px) !important;
+    border-radius:0;
+}
+@media (min-width: 992px){
+    .search-sec{
+        position: relative;
+        top: -114px;
+        background: rgba(26, 70, 104, 0.51);
+    }
+}
+
+@media (max-width: 992px){
+    .search-sec{
+        background: #1A4668;
+    }
+}
+
+
+</style>
+<body>
+    
+    <div class="header">
+        <div class="logo">
+          <h1><a href="{% url 'home' %}"><img src="{% static 'logo.png'%}">KEJANI</a></h1>
+        </div>
+        <div class="links">
+                <li> <a href="{% url 'home' %}">HOME</a></li>
+                <li> <a href="{% url 'about' %}">ABOUT</a></li>
+                <li> <a href="{% url 'property' %}">PROPERTY</a></li>
+                <li> <a href="{% url 'contact' %}">CONTACT</a></li>
+        </div>
+        <div class="buttons">
+          {% if user.is_authenticated %}
+          {{user.username}} &nbsp
+          <a href="{% url 'logout' %}"><button>Log Out</button></a>
+          {% else %}
+            <a href="{% url 'login' %}"><button>Log In</button></a>
+            <a href="{% url 'signup' %}"><button>Sign Up</button></a>
+          {% endif %}
+        </div>
+    </div>
+
+
+    <div>
+        <div class="container">
+            <h1>contact us</h1>
+            <p>swing by for a house rental,room or leave a message</p>
+            <img src="" alt="">
+
+	<style>
+.table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+.table th,
+.table td {
+  padding: 12px 15px;
+}
+.table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+	</style>
+
+
+		<h1>Kejani Lordlords</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>No.</th>
+          <th>Location</th>
+					<th>Name</th>
+					<th>Phone</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+          <td>Nairobi</td>
+					<td>Hillary ama</td>
+					<td>0791 4324 2445</td>
+				</tr>
+				<tr>
+					<td>2</td>
+          <td>Kitale</td>
+					<td>Aryan Kevo</td>
+					<td>0755 783 8396</td>
+				</tr>
+				<tr>
+					<td>3</td>
+          <td>Mombasa</td>
+					<td>Lwale Runda</td>
+					<td>0789 377 2380</td>
+				</tr>
+				<tr>
+					<td>4</td>
+          <td>Lamu</td>
+					<td>Mohan Kyalo</td>
+					<td>0763 333 3394</td>
+				</tr>
+			</tbody>
+		</table>
+
+            <!-- <div class="row">
+                <div class="column">
+                    <form action="" method="post">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="your phone..">
+                    <label for="location">Location</label>
+                    <select name="Location" id="Location">
+                        <option value="kitale">kitale</option>
+                        <option value="nairobi">nairobi</option>
+                        <option value="kitale">kitale</option>
+                        <option value="mombasa">mombasa</option>
+                    </select>
+                    <label for="subject">subject</label>
+                    <input type="submit" value="submit">
+                    </form>
+
+                </div>
+
+            </div> -->
+        </div>
+    </div>
+
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+<!-- MDB -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet"/>
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-light text-muted">
+    <!-- Section: Social media -->
+    
+  
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <img  style="width:50px;" src="{% static 'logo.png'%}">Kejani 
+            </h6>
+            <p>
+                We provide Kenya’s Real Estate Industry with an unparalleled brand-building and marketing platform, 
+                with powerful opportunities to connect with home-buyers and renters searching for property online. 
+                We pride ourselves on delivering a great user experience and innovative search tools, 
+                so if you have any feedback you’d like to give us, we’d love to hear from you. Please get in touch!
+
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Products
+            </h6>
+            <p>
+              <a href="#" class="text-reset">WiFi</a>
+            </p>
+            <p>
+              <a href="#" class="text-reset">Breakfast</a>
+            </p>
+            <p>
+              <a href="#" class="text-reset">Air conditioner</a>
+            </p>
+            <p>
+              <a href="#" class="text-reset">swimming pool</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Useful links
+            </h6>
+            <p>
+              <a href="{% url 'property' %}" class="text-reset">property</a>
+            </p>
+            <p>
+              <a href="{% url 'home' %}" class="text-reset">home</a>
+            </p>
+            <p>
+              <a href="{% url 'about' %}" class="text-reset"> about</a>
+            </p>
+            <p>
+              <a href="{% url 'contact' %}" class="text-reset">contact</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3"></i> Nairobi, Kenya.</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              marriepatrick4@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> + 254 769828285</p>
+            <p><i class="fas fa-print me-3"></i> + 254 740037967</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2022 Copyright:
+      <a class="text-reset fw-bold" href= "https://Kejani.com/">Kejani.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+</body>
+</html>

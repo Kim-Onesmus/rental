@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propertypage</title>
+    <link rel="stylesheet" href="propery1.css">
+    <!-- <script>
+        const postData = async () => {
+          try {
+            const url = ('http://localhost:5000/rentals//houses');
+            await  fetch(url, {
+              method: 'GET',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            
+            }).then(response=>response.data())
+            .then(data => console.log(data))
+          } catch (error) {
+            console.error(error.message);
+          }
+        };
+            </script> -->
+            <!-- <script>
+                async function getProperty(){
+                    let response = await fetch(
+                        "http://localhost:5000/rentals//houses"
+                    );
+                    let data = await response.json();
+                    return data;
+                }
+                getProperty().then(data=> console.log(data));
+            </script> -->
+</head>
+<style>
+     .main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+
+}
+.tittle{
+    display: flex;
+    align-items: left;
+    justify-content: space-around;
+    height:30px;
+
+}
+.top{
+    display: flex;
+    align-items: left;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.top img{
+    width: 20%;
+    height: 30%;
+    margin: 5px;
+}
+.middle{
+    display: flex;
+    align-items: left;
+    justify-content: space-around;
+    background-color: blueviolet;
+    margin: 20px;
+}
+.middle p{
+    display: flex;
+    align-items: left;
+    justify-content: space-around;
+} */
+
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.text{
+    width: 600px;
+   
+}
+
+.image img{
+    width: 600px;
+}
+</style>
+{% block content%}
+<body>
+    <div class="details">
+        <div class="text">
+            {% for post in object_list%}
+       <h1>Family Apartment</h1>
+       <h2>3 bedroom house to rent in Nairobi</h2>
+       <h2>{{post.price}}</h2>
+       <div class="button">
+           <button>telephone</button>
+           <button>Whatsapp</button> 
+           <button>Email</button> 
+          
+       </div>
+            {% endfor %}
+       
+        </div>
+        <div class="image">
+            <img src="{% static '%}"> 
+        </div>
+    </div>
+    <!-- <div class="main">
+        <div class="tittle">
+            <span>Property page</span>
+        </div>
+        <div class="top">
+            <img src="./images/property1.png" alt="">
+        </div>
+        <div class="description">
+            <h2>3 bedroom house to rent in Nairobi</h2>
+            <h2>price ksh.350,000</h2>
+            <div class="button">
+                <button>Rent now</button>
+                
+            </div>
+            <div class="top">
+                <img src="images/property2.png" alt="">
+            
+            </div>
+            <div class="description">
+                <h2>4 bedroom house to rent in Mombasa</h2>
+                <h2>price ksh 200000</h2>
+                <div class="button">
+                    <button>Rent now</button>
+
+                </div>
+                <div class="top">
+                    <img src="images/property3.png" alt="">
+
+                </div>
+                <div class="description">
+                    <h2>3 bedroom house in lamu</h2>
+                    <h2>price ksh. 260000</h2>
+                    <div class="button">
+                        <button>Rent now</button>
+
+                    </div>
+                    <div class="top">
+                        <img src="images/property5.png" alt="">
+
+                    </div>
+                    <div class="description">
+                        <h2>3 bedroom house in kitale</h2>
+                        <h2>price ksh. 450000</h2>
+                        <div class="button">
+                            <button>Rent now</button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        </div>
+        
+        </div>
+    </div> -->
+  {% endblock %}
+</body>
+</html>
